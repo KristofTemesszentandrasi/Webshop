@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Eladó űrlapja</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Eladó űrlapja</h1>
+    <form>
+        <label for="id">Áru ID</label><br>
+        <input id="id" name="id" type="number"><br> 
+        <label for="nev">Áru neve</label><br>
+        <input id="nev" name="nev" type="text"><br> 
+        <label for="ar">Ár</label><br>
+        <input id="ar" name="ar" type="number"><br> 
+        <label for="kep">Áru képe</label><br>
+        <input id="kep" name="kep" type="text"><br><br>
+        
+        <input type="button" value="Feltölt" id="butFeltolt"> 
+        <input type="reset" value="Mégsem"> 
+    </form><br>
+
+    <table border="1" cellspacing>
+        <thead>
+            <tr>
+                <th colspan="5">Webshop</th>
+            </tr>
+            <tr>
+                    <th>Megveszem</th>
+                    <th>ID</th>
+                    <th>Áru neve</th>
+                    <th>Ár</th>
+                    <th>Kép</th>
+            </tr>
+        </thead>
+        <tfoot>          
+            <td colspan="5" style="text-align:center";>Kristóf webshopja</td>
+        </tfoot>
+        <tbody id="WebshopBody">
+                      
+        </tbody>
+    
+    </table><br>
+    <form>
+         <input type="button" value="Kosarba" id="butKosarba">
+    </form><br>
+
+    <table border="1" cellspacing>
+            <thead>
+                <tr>
+                    <th colspan="5">Vevő kosara</th>
+                </tr>
+                <tr>
+                        <th>Megveszem</th>
+                        <th>ID</th>
+                        <th>Áru neve</th>
+                        <th>Ár</th>
+                        <th>Kép</th>
+                </tr>
+            </thead>
+            
+            <tbody id="VevokosarBody">
+                          
+            </tbody>
+        </table><br>
+    <form>
+            <input type="button" value="Kiveszem a kosárból" id="butKiveszem">
+    </form><br>
+       
+    <script type="text/javascript" src="webshop.js"></script>
+    </body>
+</html>

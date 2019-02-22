@@ -3,6 +3,7 @@
     <head>
         <title>Eladó űrlapja</title>
         <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="webshop.css" />
     </head>
     <body>
         <h1>Eladó űrlapja</h1>
@@ -15,15 +16,18 @@
         <input id="ar" name="ar" type="number"><br> 
         <label for="kep">Áru képe</label><br>
         <input id="kep" name="kep" type="text"><br><br>
-        
         <input type="button" value="Feltölt" id="butFeltolt"> 
         <input type="reset" value="Mégsem"> 
+        <input type="button" value="Törlés a webshopból" id="butTorles"> 
     </form><br>
 
     <table border="1" cellspacing>
-        <thead>
+        <thead id="webshopthead">
             <tr>
-                <th colspan="5">Webshop</th>
+                <th colspan="5" id="Webshopfejlec">Webshop</th>
+            </tr>
+            <tr>
+                <th id="Sorrendvisszaallito" colspan="5">Eredeti lista visszaállítása</th>
             </tr>
             <tr>
                     <th>Megveszem</th>
@@ -32,9 +36,37 @@
                     <th>Ár</th>
                     <th>Kép</th>
             </tr>
+            <tr>
+                <th></th>
+                <th id="aruID">Növekvő sorrendbe</th>
+                <th id="aruNeve">Növekvő sorrendbe</th>
+                <th id="aruAra">Növekvő sorrendbe</th>
+                <th></th>
+            </tr>
         </thead>
-        <tfoot>          
-            <td colspan="5" style="text-align:center";>Kristóf webshopja</td>
+        <tfoot id="Webshopfoot"> 
+        <tr>         
+            <th></th>
+            <th id="idForditottSorrendezo">Csökkenő sorrendbe</th>
+            <th id="NevForditottSorrendezo">Csökkenő sorrendbe</th>
+            <th id="ArForditottSorrendezo">Csökkenő sorrendbe</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td></td>
+            <th>Keresés:</th>
+            <td>
+                <form>
+                    <input type="text" id="kereses">
+                </form>
+            </td>
+            <td>
+                    <form>
+                        <input type="button" id="btnKereses" value="Keresés a webshopban">
+                    </form>
+            </td>
+            <td></td>
+        </tr>
         </tfoot>
         <tbody id="WebshopBody">
                       
@@ -51,20 +83,27 @@
                     <th colspan="5">Vevő kosara</th>
                 </tr>
                 <tr>
-                        <th>Megveszem</th>
+                        <th>Kiveszem a kosárból</th>
                         <th>ID</th>
                         <th>Áru neve</th>
                         <th>Ár</th>
                         <th>Kép</th>
                 </tr>
             </thead>
-            
-            <tbody id="VevokosarBody">
+            <tfoot>
+                <tr>
+                    <th>Fizetendő:</th>
+                    <th colspan="3" id="VevokosarArTD"></th>
+                    <th>Ft</th>
+                </tr>
+            </tfoot>
+            <tbody id="VevokosarBody"> 
                           
             </tbody>
         </table><br>
     <form>
             <input type="button" value="Kiveszem a kosárból" id="butKiveszem">
+            <input type="button" value="Vásárlás" id="butVasarlas">
     </form><br>
        
     <script type="text/javascript" src="webshop.js"></script>

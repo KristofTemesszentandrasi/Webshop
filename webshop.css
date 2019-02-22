@@ -1,0 +1,28 @@
+#Webshopfejlec {
+    background-color:red;
+    color:white;
+}
+#webshopthead tr:nth-child(3) th:nth-child(2n+1) {
+    background-color:blue;
+    color:white;
+}
+#webshopthead tr:nth-child(3) th:nth-child(2n+0) {
+    background-color:green;
+    color:white;
+}
+#webshopthead tr:nth-child(4) th:nth-child(2n+1) {
+    background-color:grey;
+    color:black;
+}
+#webshopthead tr:nth-child(4) th:nth-child(2n+0) {
+    background-color:pink;
+    color:black;
+}
+#Webshopfoot tr:nth-child(1) th:nth-child(2n+0) {
+    background-color:pink;
+    color:black;
+}
+#Webshopfoot tr:nth-child(1) th:nth-child(2n+1) {
+    background-color:grey;
+    color:black;
+}

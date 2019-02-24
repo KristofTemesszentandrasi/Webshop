@@ -50,7 +50,7 @@ function Window_Load_Handler()
          this.kep=kep;
      }
      var arrAru=[]; 
-
+//console.log(arrAru)
         function CreateElementWebshop()
         {
          for(i=(arrAru.length-1); i<arrAru.length; i++)
@@ -214,11 +214,14 @@ var nodeTD2=document.createElement("TD");
 var nodeTD3=document.createElement("TD");
 var nodeTD4=document.createElement("TD");
 var nodeTD5=document.createElement("TD");
+var img=document.createElement("IMG");
+img.setAttribute("src",masolatArrAru[a].kep);
+img.setAttribute("height",70);
 nodeTD1.innerHTML="<input type=\"checkbox\">";
 nodeTD2.innerText=masolatArrAru[a].id;
 nodeTD3.innerText=masolatArrAru[a].neve;
 nodeTD4.innerText=masolatArrAru[a].ara;
-nodeTD5.innerHTML=masolatArrAru[a].kep;
+nodeTD5.appendChild(img);
 nodeTR.appendChild(nodeTD1);
 nodeTR.appendChild(nodeTD2);
 nodeTR.appendChild(nodeTD3);
@@ -229,27 +232,12 @@ WebshopBody.appendChild(nodeTR);
 masolatArrAru=[];
 }
 
-function Sorrendezo_Kiolvaso()
-{
-    var kiolvasandoSorok=document.querySelectorAll("#WebshopBody tr");
-    for(b=0; b<kiolvasandoSorok.length; b++)
-        {                          
-            var nodeAruId=kiolvasandoSorok[b].querySelector("td:nth-child(2)").innerText;
-            var aruIdSzamban=parseInt(nodeAruId);
-            var nodeAruNeve=kiolvasandoSorok[b].querySelector("td:nth-child(3)").innerText;
-            var nodeAr=kiolvasandoSorok[b].querySelector("td:nth-child(4)").innerText;
-            var aruArSzamban=parseInt(nodeAr);
-            var nodeAruKepe=kiolvasandoSorok[b].querySelector("td:nth-child(5)").innerHTML;
-            var RendezendoObject=new Kosartipus(aruIdSzamban, nodeAruNeve, aruArSzamban, nodeAruKepe);   
-            masolatArrAru.push(RendezendoObject);
-        } 
-        console.log(masolatArrAru);
-}
-
 function AruId_Click_Handler()
 {       
-    Sorrendezo_Kiolvaso();
-
+    for(var k=0; k<arrAru.length; k++)
+    {
+        masolatArrAru.push(arrAru[k]);
+    }
     var temp=[];
         for(var i=0; i<masolatArrAru.length/*-1*/; i++)
         {
@@ -269,8 +257,10 @@ function AruId_Click_Handler()
 
 function AruIdFord_Click_Handler()
 {  
-    Sorrendezo_Kiolvaso();
-
+    for(var k=0; k<arrAru.length; k++)
+    {
+        masolatArrAru.push(arrAru[k]);
+    }
     var temp=[];
         for(var i=0; i<masolatArrAru.length/*-1*/; i++)
         {
@@ -290,8 +280,10 @@ function AruIdFord_Click_Handler()
 
 function AruNeve_Click_Handler()
 {
-    Sorrendezo_Kiolvaso();
-
+    for(var k=0; k<arrAru.length; k++)
+    {
+        masolatArrAru.push(arrAru[k]);
+    }
     var temp=[];
         for(var i=0; i<masolatArrAru.length/*-1*/; i++)
         {
@@ -311,8 +303,10 @@ function AruNeve_Click_Handler()
 
 function AruNeveFord_Click_Handler()
 {
-    Sorrendezo_Kiolvaso();
-
+    for(var k=0; k<arrAru.length; k++)
+    {
+        masolatArrAru.push(arrAru[k]);
+    }
     var temp=[];
         for(var i=0; i<masolatArrAru.length/*-1*/; i++)
         {
@@ -332,8 +326,10 @@ function AruNeveFord_Click_Handler()
 
 function AruAra_Click_Handler()
 {
-    Sorrendezo_Kiolvaso();
-
+    for(var k=0; k<arrAru.length; k++)
+    {
+        masolatArrAru.push(arrAru[k]);
+    }
     var temp=[];
         for(var i=0; i<masolatArrAru.length/*-1*/; i++)
         {
@@ -353,8 +349,10 @@ function AruAra_Click_Handler()
 
 function AruAraFord_Click_Handler()
 {
-    Sorrendezo_Kiolvaso();
-
+    for(var k=0; k<arrAru.length; k++)
+    {
+        masolatArrAru.push(arrAru[k]);
+    }
     var temp=[];
         for(var i=0; i<masolatArrAru.length/*-1*/; i++)
         {
@@ -374,35 +372,11 @@ function AruAraFord_Click_Handler()
 
 function SorrendVissza_Click_Handler()
 {
-    var nodeWebshopBody=document.querySelector("#WebshopBody");
-    var torlendoSorok=document.querySelectorAll("#WebshopBody tr");
-    for(b=0; b<torlendoSorok.length; b++)
-    {                          
-     WebshopBody.removeChild(torlendoSorok[b]);
-    }
     for(i=0; i<arrAru.length; i++)
-         {
-        var nodeTR=document.createElement("TR");
-        var nodeTD1=document.createElement("TD");
-        var nodeTD2=document.createElement("TD");
-        var nodeTD3=document.createElement("TD");
-        var nodeTD4=document.createElement("TD");
-        var nodeTD5=document.createElement("TD");
-        var img=document.createElement("IMG");
-        img.setAttribute("src",arrAru[i].kep);
-        img.setAttribute("height",70);
-        nodeTD1.innerHTML="<input type=\"checkbox\">";
-        nodeTD2.innerText=arrAru[i].id;
-        nodeTD3.innerText=arrAru[i].neve;
-        nodeTD4.innerText=arrAru[i].ara;
-        nodeTD5.appendChild(img);
-        nodeTR.appendChild(nodeTD1);
-        nodeTR.appendChild(nodeTD2);
-        nodeTR.appendChild(nodeTD3);
-        nodeTR.appendChild(nodeTD4);
-        nodeTR.appendChild(nodeTD5);
-        nodeWebshopBody.appendChild(nodeTR);
-         }
+    {
+        masolatArrAru.push(arrAru[i]);
+    }
+    Sorrendezo_Epito_Bonto();
 }
  
 function btnKereses_Click_Handler()
@@ -412,59 +386,29 @@ function btnKereses_Click_Handler()
 }
 
 function kereses(keresett)
-{   
-    var keresettAru=[];    
-    for(var a=0; a<arrAru.length; a++)
+{       
+    for(var i=0; i<arrAru.length; i++)
         {
-        if(arrAru[a].id==keresett)
+        if(arrAru[i].id==keresett)
             {
-                keresettAru.push(arrAru[a]);     
+                masolatArrAru.push(arrAru[i]);     
             }
         }
     for(var j=0; j<arrAru.length; j++)
     {
-        if(arrAru[j].ara==keresett)
-            {
-                keresettAru.push(arrAru[j]);     
-            }
+    if(arrAru[j].ara==keresett)
+        {
+            masolatArrAru.push(arrAru[j]);     
+        }
     }
     for(var k=0; k<arrAru.length; k++)
         {
         if(arrAru[k].neve==keresett)
             {
-                keresettAru.push(arrAru[k]);     
+                masolatArrAru.push(arrAru[k]);     
             }
         }
-    
-    var nodeWebshopBody=document.querySelector("#WebshopBody");
-    var torlendoSorok=document.querySelectorAll("#WebshopBody tr");
-    for(b=0; b<torlendoSorok.length; b++)
-    {                          
-     WebshopBody.removeChild(torlendoSorok[b]);
-    }
-    for(i=0; i<arrAru.length; i++)
-         {
-        var nodeTR=document.createElement("TR");
-        var nodeTD1=document.createElement("TD");
-        var nodeTD2=document.createElement("TD");
-        var nodeTD3=document.createElement("TD");
-        var nodeTD4=document.createElement("TD");
-        var nodeTD5=document.createElement("TD");
-        var img=document.createElement("IMG");
-        img.setAttribute("src",keresettAru[i].kep);
-        img.setAttribute("height",70);
-        nodeTD1.innerHTML="<input type=\"checkbox\">";
-        nodeTD2.innerText=keresettAru[i].id;
-        nodeTD3.innerText=keresettAru[i].neve;
-        nodeTD4.innerText=keresettAru[i].ara;
-        nodeTD5.appendChild(img);
-        nodeTR.appendChild(nodeTD1);
-        nodeTR.appendChild(nodeTD2);
-        nodeTR.appendChild(nodeTD3);
-        nodeTR.appendChild(nodeTD4);
-        nodeTR.appendChild(nodeTD5);
-        nodeWebshopBody.appendChild(nodeTR);
-         }
+    Sorrendezo_Epito_Bonto();
 }
 
 

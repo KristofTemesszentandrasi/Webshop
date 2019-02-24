@@ -243,7 +243,6 @@ function Sorrendezo_Kiolvaso()
             var RendezendoObject=new Kosartipus(aruIdSzamban, nodeAruNeve, aruArSzamban, nodeAruKepe);   
             masolatArrAru.push(RendezendoObject);
         } 
-        console.log(masolatArrAru);
 }
 
 function AruId_Click_Handler()
@@ -297,7 +296,7 @@ function AruNeve_Click_Handler()
         {
             for(var j=0;/*j=i+1;*/ j<masolatArrAru.length; j++)
             {
-                if(masolatArrAru[i].neve<masolatArrAru[j].neve)//>csökkenő sorrend
+                if(masolatArrAru[i].neve.localeCompare(masolatArrAru[j].neve)<0)
                 {
                     temp.push(masolatArrAru[i],masolatArrAru[j]);
                     masolatArrAru[i]=temp[1];
@@ -318,7 +317,7 @@ function AruNeveFord_Click_Handler()
         {
             for(var j=0;/*j=i+1;*/ j<masolatArrAru.length; j++)
             {
-                if(masolatArrAru[i].neve>masolatArrAru[j].neve)//>csökkenő sorrend
+                if(masolatArrAru[i].neve.localeCompare(masolatArrAru[j].neve)>0)
                 {
                     temp.push(masolatArrAru[i],masolatArrAru[j]);
                     masolatArrAru[i]=temp[1];

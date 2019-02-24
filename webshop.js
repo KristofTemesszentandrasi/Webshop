@@ -193,7 +193,7 @@ function ButVasarlas_Click_Handler()
 {
     var VevokosarArmezo=document.querySelector("#VevokosarArTD"); 
     var arOsszeg=VevokosarArmezo.innerText;
-    console.log("Ön az alábbi összegért vásárolt:"+" "+arOsszeg+" "+"Ft");
+    alert("Ön az alábbi összegért vásárolt:"+" "+arOsszeg+" "+"Ft");
 }
 
 //sorrendezés

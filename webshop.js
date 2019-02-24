@@ -158,34 +158,33 @@ function CreateElementKosar()
             }
         var VevokosarArmezo=document.querySelector("#VevokosarArTD");
         VevokosarArmezo.innerText=arakOsszege;
-        
         }
          arrKosar=[];
 }
-        
+      
 function ButKiveszem_Click_Handler()
-{
+{      
+        var VevokosarArmezo=document.querySelector("#VevokosarArTD");
+        var arOsszeg=VevokosarArmezo.innerText;
+        var arOsszegSzamban=parseInt(arOsszeg);
+        var VevokosarBody=document.querySelector("#VevokosarBody");
         var checkedInputs=document.querySelectorAll("#VevokosarBody input:checked");
         for(i=0; i<checkedInputs.length; i++)
         {
-            var VevokosarBody=document.querySelector("#VevokosarBody");
             var checkedRow=checkedInputs[i].parentElement.parentElement;  
             var nodeAr=checkedRow.querySelector("td:nth-child(4)").innerText;
             var arSzamban=parseInt(nodeAr);
             for(j=0; j<arrArosszegzo.length; j++)
               {
-                  if(arrArosszegzo[j]===arSzamban)
+                  if(arrArosszegzo[j]==arSzamban)
                   {
-                    var VevokosarArmezo=document.querySelector("#VevokosarArTD");
-                    var arOsszeg=VevokosarArmezo.innerText;
-                    var arOsszegSzamban=parseInt(arOsszeg);
                     arOsszegSzamban-=arrArosszegzo[j];
-                    arrArosszegzo.splice(j,1);                   
+                    arrArosszegzo.splice(j,1); 
+                    break;                  
                   }
               }
             VevokosarBody.removeChild(checkedRow);                                      
         }
-        var VevokosarArmezo=document.querySelector("#VevokosarArTD");
         VevokosarArmezo.innerText=arOsszegSzamban;
 }     
 
